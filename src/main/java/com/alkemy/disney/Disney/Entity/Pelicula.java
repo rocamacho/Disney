@@ -15,13 +15,12 @@ import javax.persistence.*;
 
 
 	@Entity
-	@Table(name="peliculas")
 	@Getter
 	@Setter
-	public class PeliculaEntity{
+	public class Pelicula{
 
 		@Id
-	    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 		
 		private String imagen;
@@ -36,7 +35,7 @@ import javax.persistence.*;
 		
 		@ManyToOne (fetch= FetchType.EAGER, cascade= CascadeType.ALL)
 		@JoinColumn(name="genero_id", insertable = false, updatable=false)
-		private GeneroEntity genero;
+		private Genero genero;
 		
 		@Column(name="genero_id", nullable=false)
 		private Long generoId;
@@ -50,7 +49,7 @@ import javax.persistence.*;
 	           name= "personaje_pelicula",
 	           joinColumns=@JoinColumn(name="pelicula_id"),
 	           inverseJoinColumns= @JoinColumn(name ="personaje_id"))
-		private Set<PersonajeEntity> personajes= new HashSet<>();
+		private Set<Personaje> personajes= new HashSet<>();
 		
 	}
 		

@@ -10,14 +10,13 @@ import lombok.Setter;
 
 
 @Entity
-@Table(name="personaje")
 @Getter
 @Setter
-public class PersonajeEntity {
+public class Personaje {
 
 	  
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
 	private String imagen;
@@ -30,7 +29,7 @@ public class PersonajeEntity {
 	private boolean deleted= Boolean.FALSE;
 	
 	@ManyToMany(mappedBy="personajes", cascade=CascadeType.ALL)
-	private List<PeliculaEntity> peliculas =new ArrayList<>();
+	private List<Pelicula> peliculas =new ArrayList<>();
 	
 	
 
