@@ -44,11 +44,14 @@ import javax.persistence.*;
 		      cascade= {
 		    		  CascadeType.PERSIST,
 		    		  CascadeType.MERGE
-		      })
+		                }
+		           )
 	    @JoinTable( 
 	           name= "personaje_pelicula",
 	           joinColumns=@JoinColumn(name="pelicula_id"),
-	           inverseJoinColumns= @JoinColumn(name ="personaje_id"))
+	           inverseJoinColumns= @JoinColumn(name ="personaje_id")
+	               )
+		
 		private Set<Personaje> personajes= new HashSet<>();
 		
 	}

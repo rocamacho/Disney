@@ -17,6 +17,17 @@ import javax.persistence.*;
 		
 		private String imagen;
 
-	}
+		public void setNombre(String nombre) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setImagen(String imagen) {
+			// TODO Auto-generated method stub
+			
+		}
+
+	
+   	}
 
 
